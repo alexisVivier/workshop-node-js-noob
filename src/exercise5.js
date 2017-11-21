@@ -5,13 +5,13 @@ exports.run = function(input) {
 
   var compteFiles = function (){
     fs.readdir(input.directory, function (err, files){
-    // if(err){
-    //   input.showError(err);
-    // }else{
+    if(err){
+      input.showError();
+    }
     var fileNumber = files.length();
     return fileNumber;
-    // }
   })
+  return fileNumber;
 }
 return compteFiles();
 };
